@@ -4,5 +4,6 @@
 - This information is saved on another file keys.js that is not
 - tracked via github
 
+!["Main page"](Joke.png)
 
 
