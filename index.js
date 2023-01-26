@@ -1,6 +1,13 @@
 const btnEl = document.getElementById("btn");
-btnEl.onclick = getJoke;
+btnEl.addEventListener("click", getJoke);
+const options = {
+  method: 'GET',
+  headers: { 'X-Api-Key': apiKey },
+}
 
-function getJoke() {
-  console.log("get Joke")
+async function getJoke() {
+  document.getElementById("joke").innerHTML = 'fetching....';
+  const response = await fetch(apiUrl, options);
+  const data = await response.json();
+  document.getElementById("joke").innerHTML = data[0].joke;
 }
